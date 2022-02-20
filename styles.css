@@ -1,0 +1,34 @@
+.center {
+  text-align: center;
+  border: 3px solid green;
+}
+
+.formstyle {
+  width: 300px;
+  height: 120px;
+  margin: auto;
+  border: 3px solid skyblue;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+input {
+  width: 150px;
+  background-color: blanchedalmond;
+  color: black;
+  border: 1px solid gray;
+  border-radius: 120px;
+  padding: 10px;
+  margin: 1px;
+  font-size: 10px;
+}
+
+button {
+  background-color: black;
+  border: none;
+  color: white;
+  padding: 7px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}

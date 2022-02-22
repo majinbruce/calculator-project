@@ -9,7 +9,7 @@ function calculate() {
   let enterNumbers = document.getElementById("num1").value;
   let result = eval(enterNumbers);
   document.getElementById("result").value = result;
-  document.getElementById("num1").value = enterNumbers;
+  document.getElementById("num1").value = result;
 }
 
 //Event listners attached to event to prevent the default behavior i.e reloading the page

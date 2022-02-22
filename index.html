@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Calculator Project</title>
-    <script src="calculator.js" defer></script>
+    <script src="attemp2.js" defer></script>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -15,18 +15,31 @@
       </div>
 
       <div>
-        <label>Enter Number 1</label>
-        <input type="number" id="num1" />
+        <label>Enter Numbers</label>
+        <input type="text" id="num1" />
       </div>
+
       <div>
-        <label>Enter Number 2</label>
-        <input type="number" id="num2" />
+        <label> Result </label>
+        <input type="text" id="result" />
       </div>
-      <button type="submit" id="add">+</button>
-      <button type="submit" id="subtract">-</button>
-      <button type="submit" id="multiply">*</button>
-      <button type="submit" id="divide">/</button>
-      <button type="submit" id="percent">%</button>
+      <button type="submit" value="+" onclick="display('+')" id="add">+</button>
+      <button type="submit" value="-" onclick="display('-')" id="subtract">
+        -
+      </button>
+      <button type="submit" value="*" onclick="display('*')" id="multiply">
+        *
+      </button>
+      <button type="submit" value="/" onclick="display('/')" id="divide">
+        /
+      </button>
+      <button type="submit" value="%" onclick="display('%')" id="percent">
+        %
+      </button>
+      <button type="submit" id="clear">clear</button>
+      <button type="submit" value="=" onclick="calculate()" id="equals">
+        =
+      </button>
     </form>
   </body>
 </html>

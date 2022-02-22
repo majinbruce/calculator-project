@@ -1,53 +1,43 @@
-const input1 = document.getElementById("num1");
-const input2 = document.getElementById("num2");
+//function that updates the Enternumber box
+function display(operator) {
+  document.getElementById("num1").value += operator;
+}
 
-const add = document.getElementById("add");
-const subtract = document.getElementById("subtract");
-const multiply = document.getElementById("multiply");
-const divide = document.getElementById("divide");
+//function that calculates the expression and returns result
+function calculate() {
+  // validateInput();
+  let enterNumbers = document.getElementById("num1").value;
+  let result = eval(enterNumbers);
+  document.getElementById("result").value = result;
+  document.getElementById("num1").value = enterNumbers;
+}
 
-function getNumbers() {
-  const num1 = parseInt(input1.value);
-  const num2 = parseInt(input2.value);
-  if (!num1 || !num2) {
-    alert("please enter valid input");
-    return;
+//Event listners attached to event to prevent the default behavior i.e reloading the page
+add.addEventListener("click", (event) => {
+  event.preventDefault();
+});
+subtract.addEventListener("click", (event) => {
+  event.preventDefault();
+});
+divide.addEventListener("click", (event) => {
+  event.preventDefault();
+});
+multiply.addEventListener("click", (event) => {
+  event.preventDefault();
+});
+
+equals.addEventListener("click", (event) => {
+  event.preventDefault();
+});
+
+percent.addEventListener("click", (event) => {
+  event.preventDefault();
+});
+
+//eventListner attached to result box which prvents user from entering values in the result box
+result.addEventListener("click", (event) => {
+  const result = event.target.closest("div");
+  if (result) {
+    alert("please do not enter values in the result box");
   }
-  return [num1, num2];
-}
-
-function addition() {
-  const numbers = getNumbers();
-  const result = numbers[0] + numbers[1];
-  alert(`${numbers[0]} + ${numbers[1]} = ${result}`);
-}
-
-function subtraction() {
-  const numbers = getNumbers();
-  const result = numbers[0] - numbers[1];
-  alert(`${numbers[0]} - ${numbers[1]} = ${result}`);
-}
-
-function division() {
-  const numbers = getNumbers();
-  const result = numbers[0] / numbers[1];
-  alert(`${numbers[0]} / ${numbers[1]} = ${result}`);
-}
-
-function multiplication() {
-  const numbers = getNumbers();
-  const result = numbers[0] * numbers[1];
-  alert(`${numbers[0]} * ${numbers[1]} = ${result}`);
-}
-
-function percentage() {
-  const numbers = getNumbers();
-  const result = numbers[0] % numbers[1];
-  alert(`${numbers[0]} % ${numbers[1]} = ${result}`);
-}
-
-add.addEventListener("click", addition);
-subtract.addEventListener("click", subtraction);
-divide.addEventListener("click", division);
-multiply.addEventListener("click", multiplication);
-percent.addEventListener("click", percentage);
+});
